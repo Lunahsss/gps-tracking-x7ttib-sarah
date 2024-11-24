@@ -1,0 +1,92 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.header {
+  height: 50px;
+  width: 100%;
+  background-color: #353535;
+  justify-content: start;
+  align-items: center;
+  display: flex;
+  padding: 0 10px;
+  color: white;
+
+  .header-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+  }
+
+  .header-title div:nth-child(2) {
+    background-color: #ff3700;
+    height: 100%;
+    padding: 10px 5px;
+    margin: 2px;
+  }
+
+  .header-content {
+    width: 100%;
+    display: flex;
+  }
+
+  .header-actions {
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+
+  ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0 5px;
+    margin: 0;
+    height: 100%;
+
+    li:hover {
+      cursor: pointer;
+      background: rgb(77, 77, 77);
+    }
+
+    li {
+      height: 100%;
+      cursor: pointer;
+      a {
+        box-sizing: border-box;
+        display: inline-flex;
+        height: 100%;
+        font-size: 16px;
+        padding: 0 10px;
+        font-weight: 300;
+        text-decoration: none;
+        align-items: center;
+        color: unset;
+      }
+
+      .active {
+        border-width: 4px 0;
+        border-style: solid;
+        border-top-color: transparent;
+        border-bottom-color: #ff3700;
+      }
+    }
+  }
+}
+
+.content {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+.router-outlet {
+  padding: 10px;
+  width: 100%;
+  height: 100%;
+}
+
+::ng-deep .dropdown-vehicle {
+  min-width: 300px !important;
+}

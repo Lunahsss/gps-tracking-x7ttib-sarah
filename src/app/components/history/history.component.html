@@ -1,0 +1,10 @@
+<div>
+  <table>
+    <tr *ngFor="let t of trackSessions">
+      <td class="history-key" (click)="getAndViewHistory(his)">
+        {{ t.Name }}
+      </td>
+    </tr>
+  </table>
+</div>
+<div id="map" style="height: 400px;"></div>

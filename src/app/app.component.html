@@ -1,0 +1,45 @@
+<div class="main">
+  <div class="header">
+    <div class="header-title">
+      <div>Crisis</div>
+      <div>Application</div>
+    </div>
+    <div class="header-content"></div>
+    <div class="header-actions">
+      <ul>
+        <li>
+          <a routerLink="/home" routerLinkActive="active">Home</a>
+        </li>
+        <li>
+          <a routerLink="/history" routerLinkActive="active">Map</a>
+        </li>
+        <li>
+          <a routerLink="/tracking" routerLinkActive="active">Chat</a>
+        </li>
+      </ul>
+      <span style="margin-left: 5px;">
+        <i class="pi pi-user"></i>
+      </span>
+    </div>
+  </div>
+  <div class="content">
+    <div class="sidebar">
+      <nav></nav>
+    </div>
+    <div class="router-outlet">
+      <router-outlet
+        *ngIf="selectedVehicle$ | async as vehicle; else login"
+      ></router-outlet>
+    </div>
+  </div>
+</div>
+
+<ng-template #login>
+  <p-dropdown
+    [styleClass]="'dropdown-vehicle'"
+    [options]="vehicles$ | async"
+    optionLabel="licensePlate"
+    (onChange)="vehicleSelectionChanged($event)"
+    placeholder="Voertuig"
+  ></p-dropdown>
+</ng-template>
